@@ -1,12 +1,9 @@
-
-
 import 'package:dartz/dartz.dart';
 import 'package:weather_uss/core/error/failure.dart';
 import 'package:weather_uss/domain/entities/weather.dart';
 import 'package:weather_uss/domain/repositories/weather_repository.dart';
 
 class GetCurrentWeatherUseCase {
-
   final WeatherRepository weatherRepository;
 
   GetCurrentWeatherUseCase(this.weatherRepository);
