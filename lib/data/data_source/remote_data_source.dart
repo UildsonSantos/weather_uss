@@ -7,7 +7,7 @@ import 'package:weather_uss/core/error/exception.dart';
 import 'package:weather_uss/data/models/weather_model.dart';
 
 abstract class WeatherRemoteDataSource {
-  Future<WeatherModel> getCurrentWeather(String cityname);
+  Future<WeatherModel> getCurrentWeather(String cityName);
 }
 
 class WeatherRemoteDataSourceImpl extends WeatherRemoteDataSource {
@@ -16,9 +16,9 @@ class WeatherRemoteDataSourceImpl extends WeatherRemoteDataSource {
   WeatherRemoteDataSourceImpl({required this.client});
 
   @override
-  Future<WeatherModel> getCurrentWeather(String cityname) async {
+  Future<WeatherModel> getCurrentWeather(String cityName) async {
     final response =
-        await client.get(Uri.parse(Urls.currentWeatherByName(cityname)));
+        await client.get(Uri.parse(Urls.currentWeatherByName(cityName)));
 
     if (response.statusCode == 200) {
       return WeatherModel.fromJson(jsonDecode(response.body));
